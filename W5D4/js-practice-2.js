@@ -73,3 +73,5 @@ let bfastOrder = function dinerBreakfast() {
     console.log(order);
   };
 };
+let table = new bfastOrder();
+table('bagel');
