@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+  </head>
+  <body>
+    <h2>users</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>username</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>password_digest</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>authenticity_token</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>profile_picture</th>
+        <th>blob</th>
+      </tr>
+      <tr>
+        <th>description</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>rank</th>
+        <th>integer</th>
+      </tr>
+    </table>
+
+    <h2>votes</h2>
+    <table>
+      <tr>
+        <th>answer_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>question_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>count</th>
+        <th>integer</th>
+      </tr>
+    </table>
+
+    <h2>questions</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>category_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>title</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>body</th>
+        <th>string</th>
+      </tr>
+    </table>
+
+
+    <h2>answers</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>question_id</th>
+        <th>foreign_key</th>
+      </tr>
+    </table>
+
+
+    <h2>comments</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>question_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>answer_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>body</th>
+        <th>text</th>
+      </tr>
+    </table>
+
+
+    <h2>code_snippets</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>question_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>body</th>
+        <th>text</th>
+      </tr>
+    </table>
+
+    <h2>categories</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>name</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>description</th>
+        <th>text</th>
+      </tr>
+      <tr>
+        <th>moderator_id</th><!--user_id-->
+        <th>foreign_key</th>
+      </tr>
+    </table>
+
+    <h2>users_jobs</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>job_id</th>
+        <th>foreign_key</th>
+      </tr>
+    </table>
+
+
+    <h2>users_badges</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>badge_id</th>
+        <th>foreign_key</th>
+      </tr>
+    </table>
+
+    <h2>users_tags</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>category_id</th>
+        <th>foreign_key</th>
+      </tr>
+    </table>
+
+    <h2>jobs</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>title</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>description</th>
+        <th>text</th>
+      </tr>
+    </table>
+
+    <h2>badges</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>title</th>
+        <th>string</th>
+      </tr>
+      <tr>
+        <th>description</th>
+        <th>text</th>
+      </tr>
+    </table>
+
+    <h2>messages</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>thread_id</th> <!-- joins foreign key for thread_recipients table -->
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>body</th>
+        <th>text</th>
+      </tr>
+    </table>
+
+    <h2>thread_recipients</h2>
+    <table>
+      <tr>
+        <th>column_name</th>
+        <th>type</th>
+      </tr>
+      <tr>
+        <th>user_id</th>
+        <th>foreign_key</th>
+      </tr>
+      <tr>
+        <th>thread_id</th> <!-- joins foreign key for messages table -->
+        <th>foreign_key</th>
+      </tr>
+    </table>
+  </body>
+</html>
